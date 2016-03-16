@@ -10,6 +10,14 @@
 
 <template name="gameboard">
   <div class="gameboard">
-    <div class="box"></div>
+    {{#each boxes}}
+      {{> box}}
+    {{/each}}
+    <button class="reset-game" type="button">Reset game</button>
+  </div>
+</template>
+<template name="box">
+  <div class="box {{#if disabled}} disabled {{/if}}">
+    {{player}}
   </div>
 </template>
